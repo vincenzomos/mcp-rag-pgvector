@@ -1,0 +1,40 @@
+spring:
+  application:
+    name: ragpgvector
+
+  ai:
+    model:
+      chat: vertexai
+    vertex:
+      ai:
+        gemini:
+          project-id: ${GEMINI_PROJECT_ID:ai-mcp-vmos}
+          location: europe-west1
+        embedding:
+          enabled: true
+          options:
+            model: text-embedding-004  # Or textembedding-gecko@003
+          project-id: ${GEMINI_PROJECT_ID:ai-mcp-vmos}
+          location: europe-west1
+    vectorstore:
+      pgvector:
+        initialize-schema: true  # Dit dwingt Spring AI om de tabel aan te maken
+        index-type: HNSW        # Snelle zoekmethode voor vectoren
+        distance-type: COSINE_DISTANCE   # Meest gebruikt voor tekstvergelijking
+        dimensions: 768         # Dit moet matchen met je embedding model (Gemini is vaak 768)
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/mcp_uren_db
+    username: postgres
+    password: verysecret
+    driver-class-name: org.postgresql.Driver
+#server:
+#  port: 9191
+logging:
+  level:
+    org.springframework.ai.vectorstore: DEBUG # Handig voor je demo om de SQL te zien
+
+
+server:
+  compression:
+    enabled: false # Disable response compression for streaming filling on frontend
