@@ -1,6 +1,6 @@
-package com.ragpgvector.ragpgvector.config;
+package com.ragpgvector.config;
 
-import com.ragpgvector.ragpgvector.VectorIngestionService;
+import com.ragpgvector.VectorIngestionService;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

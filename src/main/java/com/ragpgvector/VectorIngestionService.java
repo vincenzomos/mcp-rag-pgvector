@@ -1,4 +1,4 @@
-package com.ragpgvector.ragpgvector;
+package com.ragpgvector;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.ai.reader.ExtractedTextFormatter;
@@ -28,7 +28,7 @@ public class VectorIngestionService {
         Resource[] resources = resolver.getResources("classpath:/hoursheets/*.pdf");
 
 
-        System.out.println("Start met laden van " + resources.length + " PDF bestanden...");
+        log.info("Start met laden van " + resources.length + " PDF bestanden...");
 
         for (Resource pdfResource : resources) {
             try {
