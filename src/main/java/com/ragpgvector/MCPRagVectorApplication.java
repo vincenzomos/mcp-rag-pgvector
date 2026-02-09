@@ -10,10 +10,4 @@ public class MCPRagVectorApplication {
 		SpringApplication.run(MCPRagVectorApplication.class, args);
 	}
 
-//    @Bean
-//    public ToolCallbackProvider myMcpTools(HoursMcpTools hoursMcpTools) {
-//        return MethodToolCallbackProvider.builder()
-//                .toolObjects(hoursMcpTools) // De klasse waar je @Tool methodes in staan
-//                .build();
-//    }
 }

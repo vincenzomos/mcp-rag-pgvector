@@ -11,14 +11,7 @@ spring:
       server:
         name: my-workhours-server
         version: 0.0.1
-#         protocol: STATELESS
         protocol: stateless
-        transport: STDIO
-        enabled: true
-        capabilities:
-          tool: true
-        annotation-scanner:
-          enabled: true
     model:
       chat: vertexai
     vertex:
